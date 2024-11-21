@@ -7,7 +7,7 @@ const StockInventoryComponent = () => {
   useEffect(() => {
     const fetchStock = async () => {
       try {
-        const response = await axios.get("http://localhost:8000/api/stock");
+        const response = await axios.get("http://localhost:8080/api/stock");
         setStock(response.data);
       } catch (error) {
         console.error("Error fetching stock data:", error);
