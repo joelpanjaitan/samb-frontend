@@ -1,10 +1,15 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { Suppliers, Products } from "../../../dto/PenerimaanBarang.dto";
+import {
+  Warehouses,
+  Suppliers,
+  Products,
+} from "../../dto/PenerimaanBarang.dto";
+
 const PenerimaanBarangComponent = () => {
+  const [warehouse, setWarehouse] = useState<Warehouses[]>([]);
   const [suppliers, setSuppliers] = useState<Suppliers[]>([]);
   const [products, setProducts] = useState<Products[]>([]);
-  const [warehouse, setWarehouse] = useState([]);
   const [trxData, setTrxData] = useState({
     trxNo: "",
     supplierId: "",
@@ -17,9 +22,12 @@ const PenerimaanBarangComponent = () => {
   });
   useEffect(() => {
     // Fetch suppliers and products from the API when component mounts
-    axios.get("/api/suppliers").then((res) => setSuppliers(res.data));
-    axios.get("/api/products").then((res) => setProducts(res.data));
-    axios.get("/api/warehouses").then((res) => setWarehouse(res.data));
+    const fetchData = async () => {
+      axios.get("/api/suppliers").then((res) => setSuppliers(res.data));
+      axios.get("/api/products").then((res) => setProducts(res.data));
+      axios.get("/api/warehouses").then((res) => setWarehouse(res.data));
+    };
+    fetchData();
   }, []);
   const handleChangeInput = (data: any) => {
     const { name, value } = data.target;
