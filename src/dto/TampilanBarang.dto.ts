@@ -12,3 +12,8 @@ export interface Warehouses {
   WhsPK: number;
   WhsName: string;
 }
+
+export interface Customers {
+  CustomerPK: number;
+  CustomerName: string;
+}

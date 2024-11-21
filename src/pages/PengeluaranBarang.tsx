@@ -1,10 +1,10 @@
-import PenerimaanBarangComponent from "../components/PenerimaanBarang/PenerimaanBarangComponent";
+import PenerimaanBarangComponent from "../components/PengeluaranBarang/PengeluaranBarangComponent";
 function PengeluaranBarang() {
   const {
     handleChangeInput,
     handleSubmit,
     warehouse,
-    suppliers,
+    customers,
     products,
     trxData,
   } = PenerimaanBarangComponent();
@@ -12,15 +12,15 @@ function PengeluaranBarang() {
     <>
       <form onSubmit={handleSubmit}>
         <h2>Pengeluaran Barang</h2>
-        <label>Supplier:</label>
+        <label>Customer:</label>
         <select
-          name="supplierId"
-          value={trxData.supplierId}
+          name="customerId"
+          value={trxData.customerId}
           onChange={handleChangeInput}
         >
-          {suppliers.map((supplier) => (
-            <option key={supplier.SupplierPK} value={supplier.SupplierPK}>
-              {supplier.SupplierName}
+          {customers.map((customer) => (
+            <option key={customer.CustomerPK} value={customer.CustomerPK}>
+              {customer.CustomerName}
             </option>
           ))}
         </select>
@@ -75,7 +75,7 @@ function PengeluaranBarang() {
           onChange={handleChangeInput}
         />
 
-        <button type="submit">Simpan Penerimaan</button>
+        <button type="submit">Simpan Pengeluaran</button>
       </form>
     </>
   );

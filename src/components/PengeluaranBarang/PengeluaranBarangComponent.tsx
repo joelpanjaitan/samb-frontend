@@ -1,14 +1,14 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { Warehouses, Suppliers, Products } from "../../dto/TampilanBarang.dto";
+import { Warehouses, Customers, Products } from "../../dto/TampilanBarang.dto";
 
-const PenerimaanBarangComponent = () => {
-  const [warehouse, setWarehouse] = useState<Warehouses[]>([]);
-  const [suppliers, setSuppliers] = useState<Suppliers[]>([]);
+const PengeluaranBarangComponent = () => {
+  const [customers, setCustomers] = useState<Customers[]>([]);
   const [products, setProducts] = useState<Products[]>([]);
+  const [warehouse, setWarehouse] = useState<Warehouses[]>([]);
   const [trxData, setTrxData] = useState({
     trxNo: "",
-    supplierId: "",
+    customerId: "",
     productId: "",
     qtyDus: 0,
     qtyPcs: 0,
@@ -18,7 +18,7 @@ const PenerimaanBarangComponent = () => {
   });
   useEffect(() => {
     const fetchData = async () => {
-      axios.get("/api/suppliers").then((res) => setSuppliers(res.data));
+      axios.get("/api/customers").then((res) => setCustomers(res.data));
       axios.get("/api/products").then((res) => setProducts(res.data));
       axios.get("/api/warehouses").then((res) => setWarehouse(res.data));
     };
@@ -44,15 +44,15 @@ const PenerimaanBarangComponent = () => {
   return {
     handleChangeInput,
     handleSubmit,
-    setSuppliers,
+    setCustomers,
     setWarehouse,
     setTrxData,
     setProducts,
     trxData,
     products,
     warehouse,
-    suppliers,
+    customers,
   };
 };
 
-export default PenerimaanBarangComponent;
+export default PengeluaranBarangComponent;
