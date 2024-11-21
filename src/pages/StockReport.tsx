@@ -1,4 +1,6 @@
+import StockInventoryComponent from "../components/StockInventory/StockInventory";
 function StockReport() {
+  const { stock } = StockInventoryComponent();
   return (
     <>
       <div>
@@ -15,10 +17,10 @@ function StockReport() {
           <tbody>
             {stock.map((item, index) => (
               <tr key={index}>
-                <td>{item.warehouse}</td>
-                <td>{item.productName}</td>
-                <td>{item.qtyDus}</td>
-                <td>{item.qtyPcs}</td>
+                <td>{item.WarehouseName}</td>
+                <td>{item.ProductName}</td>
+                <td>{item.QtyDus}</td>
+                <td>{item.QtyPcs}</td>
               </tr>
             ))}
           </tbody>

@@ -17,3 +17,10 @@ export interface Customers {
   CustomerPK: number;
   CustomerName: string;
 }
+
+export interface Stocks {
+  WarehouseName: string;
+  ProductName: string;
+  QtyDus: number;
+  QtyPcs: number;
+}
