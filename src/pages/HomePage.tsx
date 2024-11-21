@@ -2,7 +2,7 @@ function HomePage() {
   return (
     <div className="App">
       <header className="App-header">
-        <p className="text-3xl pb-3">Warehouse management system123</p>
+        <p className="text-3xl pb-3">Warehouse management system</p>
         <div className="flex gap-2">
           <button
             className="text-base App-link bg-transparent border border-green-200 rounded-2xl px-4"
