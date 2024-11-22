@@ -9,10 +9,10 @@ function StockReport() {
           <table>
             <thead>
               <tr>
-                <th>Gudang</th>
-                <th>Produk</th>
-                <th>Qty Dus</th>
-                <th>Qty Pcs</th>
+                <th className="text-left">Gudang</th>
+                <th className="text-left">Produk</th>
+                <th className="text-left">Qty Dus</th>
+                <th className="text-left">Qty Pcs</th>
               </tr>
             </thead>
             <tbody>
