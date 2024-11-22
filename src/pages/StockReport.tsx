@@ -18,10 +18,10 @@ function StockReport() {
             <tbody>
               {stock.map((item, index) => (
                 <tr key={index}>
-                  <td>{item.WarehouseName}</td>
-                  <td>{item.ProductName}</td>
-                  <td>{item.QtyDus}</td>
-                  <td>{item.QtyPcs}</td>
+                  <td>{item.warehouse}</td>
+                  <td>{item.product}</td>
+                  <td>{item.qty_dus}</td>
+                  <td>{item.qty_pcs}</td>
                 </tr>
               ))}
             </tbody>

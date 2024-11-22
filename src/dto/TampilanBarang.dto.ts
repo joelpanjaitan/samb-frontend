@@ -19,8 +19,8 @@ export interface Customers {
 }
 
 export interface Stocks {
-  WarehouseName: string;
-  ProductName: string;
-  QtyDus: number;
-  QtyPcs: number;
+  warehouse: string;
+  product: string;
+  qty_dus: number;
+  qty_pcs: number;
 }
