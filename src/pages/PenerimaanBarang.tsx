@@ -75,13 +75,14 @@ function PenerimaanBarang() {
           value={trxData.notes}
           onChange={handleChangeInput}
         />
-
-        <button
-          type="submit"
-          className="border border-t-green-400 w-fit m-3 px-2 rounded-xl"
-        >
-          Simpan Penerimaan
-        </button>
+        <div className="justify-center flex">
+          <button
+            type="submit"
+            className="border border-t-green-200 w-fit m-6 px-2 rounded-xl"
+          >
+            Simpan Penerimaan
+          </button>
+        </div>
       </form>
     </div>
   );
