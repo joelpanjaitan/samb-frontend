@@ -8,7 +8,7 @@ function StockReport() {
           <h2 className="mb-3">Stock Report</h2>
           <table>
             <thead>
-              <tr>
+              <tr className="bg-gray-50">
                 <th className="text-left">Gudang</th>
                 <th className="text-left">Produk</th>
                 <th className="text-left">Qty Dus</th>
@@ -17,7 +17,10 @@ function StockReport() {
             </thead>
             <tbody>
               {stock.map((item, index) => (
-                <tr key={index}>
+                <tr
+                  key={index}
+                  className={index % 2 !== 0 ? "bg-gray-50" : "bg-green-100"}
+                >
                   <td>{item.warehouse}</td>
                   <td>{item.product}</td>
                   <td>{item.qty_dus}</td>
