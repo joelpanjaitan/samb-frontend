@@ -74,8 +74,14 @@ function PengeluaranBarang() {
           value={trxData.notes}
           onChange={handleChangeInput}
         />
-
-        <button type="submit">Simpan Pengeluaran</button>
+        <div className="justify-center flex">
+          <button
+            type="submit"
+            className="border border-t-green-200 w-fit m-6 px-2 rounded-xl"
+          >
+            Simpan Pengeluaran
+          </button>
+        </div>
       </form>
     </div>
   );
