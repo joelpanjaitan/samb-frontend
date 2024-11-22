@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import axios from "axios";
+import connection from "../../connectionData";
 import { Warehouses, Suppliers, Products } from "../../dto/TampilanBarang.dto";
 
 const PenerimaanBarangComponent = () => {
@@ -19,25 +19,19 @@ const PenerimaanBarangComponent = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const supplierData = await axios.get(
-          "https://samb-backend-production.up.railway.app/suppliers"
-        );
+        const supplierData = await connection.get("/suppliers");
         setSuppliers(supplierData.data);
       } catch (error) {
         console.error("Error to fetch suppliers:", error);
       }
       try {
-        const productData = await axios.get(
-          "https://samb-backend-production.up.railway.app/products"
-        );
+        const productData = await connection.get("/products");
         setProducts(productData.data);
       } catch (error) {
         console.error("Error to fetch products:", error);
       }
       try {
-        const warehouseData = await axios.get(
-          "https://samb-backend-production.up.railway.app/warehouses"
-        );
+        const warehouseData = await connection.get("/warehouses");
         setWarehouse(warehouseData.data);
       } catch (error) {
         console.error("Error to fetch warehouses:", error);
@@ -52,7 +46,7 @@ const PenerimaanBarangComponent = () => {
 
   const handleSubmit = (input: any) => {
     input.preventDefault();
-    axios
+    connection
       .post("/api/penerimaan", trxData)
       .then((response) => {
         console.log("Barang diterima:", response.data);
