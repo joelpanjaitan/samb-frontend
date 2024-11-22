@@ -1,6 +1,6 @@
+import { Warehouses, Customers, Products } from "../../dto/TampilanBarang.dto";
 import { useState, useEffect } from "react";
 import connect from "../../connectionData";
-import { Warehouses, Customers, Products } from "../../dto/TampilanBarang.dto";
 
 const PengeluaranBarangComponent = () => {
   const [customers, setCustomers] = useState<Customers[]>([]);
