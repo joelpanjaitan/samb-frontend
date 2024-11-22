@@ -11,7 +11,7 @@ function PenerimaanBarang() {
   return (
     <div className="bg-[#282c34] h-screen text-[#61dafb] flex justify-center">
       <form onSubmit={handleSubmit} className="flex flex-col w-2/4 p-3">
-        <h2>Penerimaan Barang</h2>
+        <h2 className="mb-2">Penerimaan Barang</h2>
 
         <label>Supplier:</label>
         <select
