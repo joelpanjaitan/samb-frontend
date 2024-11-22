@@ -40,8 +40,14 @@ const PenerimaanBarangComponent = () => {
     fetchData();
   }, []);
   const handleChangeInput = (data: any) => {
+    var today = new Date().toISOString().split("T")[0];
     const { name, value } = data.target;
-    setTrxData((prevData) => ({ ...prevData, [name]: value }));
+    setTrxData((prevData) => ({
+      ...prevData,
+      [name]: value,
+      TrxInDate: `${today}`,
+      TrxInNo: `samb-${today}`,
+    }));
   };
 
   const handleSubmit = (input: any) => {
