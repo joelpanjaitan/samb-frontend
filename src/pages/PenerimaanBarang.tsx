@@ -9,9 +9,10 @@ function PenerimaanBarang() {
     trxData,
   } = PenerimaanBarangComponent();
   return (
-    <>
-      <form onSubmit={handleSubmit}>
+    <div className="bg-[#282c34] h-screen text-[#61dafb] flex justify-center">
+      <form onSubmit={handleSubmit} className="flex flex-col w-2/4 p-3">
         <h2>Penerimaan Barang</h2>
+
         <label>Supplier:</label>
         <select
           name="supplierId"
@@ -75,9 +76,14 @@ function PenerimaanBarang() {
           onChange={handleChangeInput}
         />
 
-        <button type="submit">Simpan Penerimaan</button>
+        <button
+          type="submit"
+          className="border border-t-green-400 w-fit m-3 px-2 rounded-xl"
+        >
+          Simpan Penerimaan
+        </button>
       </form>
-    </>
+    </div>
   );
 }
 export default PenerimaanBarang;
