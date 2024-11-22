@@ -15,8 +15,8 @@ function PenerimaanBarang() {
 
         <label>Supplier:</label>
         <select
-          name="supplierId"
-          value={trxData.supplierId}
+          name="TrxInSuppIdf"
+          value={trxData.TrxInSuppIdf}
           onChange={handleChangeInput}
         >
           {suppliers.map((supplier) => (
@@ -28,8 +28,8 @@ function PenerimaanBarang() {
 
         <label>Produk:</label>
         <select
-          name="productId"
-          value={trxData.productId}
+          name="TrxInDProductIdf"
+          value={trxData.TrxInDProductIdf}
           onChange={handleChangeInput}
         >
           {products.map((product) => (
@@ -41,8 +41,8 @@ function PenerimaanBarang() {
 
         <label>Gudang:</label>
         <select
-          name="warehouseId"
-          value={trxData.warehouseId}
+          name="WhsIdf"
+          value={trxData.WhsIdf}
           onChange={handleChangeInput}
         >
           {warehouse.map((wh) => (
@@ -55,24 +55,24 @@ function PenerimaanBarang() {
         <label>Jumlah Dus:</label>
         <input
           type="number"
-          name="qtyDus"
-          value={trxData.qtyDus}
+          name="TrxInDQtyDus"
+          value={trxData.TrxInDQtyDus}
           onChange={handleChangeInput}
         />
 
         <label>Jumlah Pcs:</label>
         <input
           type="number"
-          name="qtyPcs"
-          value={trxData.qtyPcs}
+          name="TrxInDQtyPcs"
+          value={trxData.TrxInDQtyPcs}
           onChange={handleChangeInput}
         />
 
         <label>Catatan:</label>
         <input
           type="text"
-          name="notes"
-          value={trxData.notes}
+          name="TrxInNotes"
+          value={trxData.TrxInNotes}
           onChange={handleChangeInput}
         />
         <div className="justify-center flex">

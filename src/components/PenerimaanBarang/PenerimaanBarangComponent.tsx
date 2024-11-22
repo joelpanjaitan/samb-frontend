@@ -7,14 +7,14 @@ const PenerimaanBarangComponent = () => {
   const [suppliers, setSuppliers] = useState<Suppliers[]>([]);
   const [products, setProducts] = useState<Products[]>([]);
   const [trxData, setTrxData] = useState({
-    trxNo: "",
-    supplierId: "",
-    productId: "",
-    qtyDus: 0,
-    qtyPcs: 0,
-    warehouseId: "",
-    trxDate: "",
-    notes: "",
+    TrxInNo: "",
+    TrxInSuppIdf: "",
+    TrxInDProductIdf: "",
+    TrxInDQtyDus: 0,
+    TrxInDQtyPcs: 0,
+    WhsIdf: "",
+    TrxInDate: "",
+    TrxInNotes: "",
   });
   useEffect(() => {
     const fetchData = async () => {
@@ -47,9 +47,10 @@ const PenerimaanBarangComponent = () => {
   const handleSubmit = (input: any) => {
     input.preventDefault();
     connect
-      .post("/api/penerimaan", trxData)
+      .post("/trx-in", trxData)
       .then((response) => {
         console.log("Barang diterima:", response.data);
+        window.alert("Barang diterima sukses");
       })
       .catch((error) => {
         console.error("Error penerimaan barang:", error);
