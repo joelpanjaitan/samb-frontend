@@ -18,9 +18,24 @@ const PenerimaanBarangComponent = () => {
   });
   useEffect(() => {
     const fetchData = async () => {
-      axios.get("/api/suppliers").then((res) => setSuppliers(res.data));
-      axios.get("/api/products").then((res) => setProducts(res.data));
-      axios.get("/api/warehouses").then((res) => setWarehouse(res.data));
+      try {
+        const supplierData = await axios.get("/api/suppliers");
+        setSuppliers(supplierData.data);
+      } catch (error) {
+        console.error("Error to fetch suppliers:", error);
+      }
+      try {
+        const productData = await axios.get("/api/products");
+        setProducts(productData.data);
+      } catch (error) {
+        console.error("Error to fetch products:", error);
+      }
+      try {
+        const warehouseData = await axios.get("/api/warehouses");
+        setWarehouse(warehouseData.data);
+      } catch (error) {
+        console.error("Error to fetch warehouses:", error);
+      }
     };
     fetchData();
   }, []);
