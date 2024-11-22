@@ -4,7 +4,7 @@ function PengeluaranBarang() {
     handleChangeInput,
     handleSubmit,
     warehouse,
-    customers,
+    suppliers,
     products,
     trxData,
   } = PenerimaanBarangComponent();
@@ -12,23 +12,23 @@ function PengeluaranBarang() {
     <div className="bg-[#282c34] h-screen text-[#61dafb] flex justify-center">
       <form onSubmit={handleSubmit} className="flex flex-col w-2/4 p-3">
         <h2 className="mb-2">Pengeluaran Barang</h2>
-        <label>Customer:</label>
+        <label>Supplier:</label>
         <select
-          name="customerId"
-          value={trxData.customerId}
+          name="TrxOutSuppIdf"
+          value={trxData.TrxOutSuppIdf}
           onChange={handleChangeInput}
         >
-          {customers.map((customer) => (
-            <option key={customer.CustomerPK} value={customer.CustomerPK}>
-              {customer.CustomerName}
+          {suppliers.map((customer) => (
+            <option key={customer.SupplierPK} value={customer.SupplierPK}>
+              {customer.SupplierName}
             </option>
           ))}
         </select>
 
         <label>Produk:</label>
         <select
-          name="productId"
-          value={trxData.productId}
+          name="TrxOutDProductId"
+          value={trxData.TrxOutDProductId}
           onChange={handleChangeInput}
         >
           {products.map((product) => (
@@ -40,8 +40,8 @@ function PengeluaranBarang() {
 
         <label>Gudang:</label>
         <select
-          name="warehouseId"
-          value={trxData.warehouseId}
+          name="WhsIdf"
+          value={trxData.WhsIdf}
           onChange={handleChangeInput}
         >
           {warehouse.map((wh) => (
@@ -54,16 +54,16 @@ function PengeluaranBarang() {
         <label>Jumlah Dus:</label>
         <input
           type="number"
-          name="qtyDus"
-          value={trxData.qtyDus}
+          name="TrxInDQtyDus"
+          value={trxData.TrxInDQtyDus}
           onChange={handleChangeInput}
         />
 
         <label>Jumlah Pcs:</label>
         <input
           type="number"
-          name="qtyPcs"
-          value={trxData.qtyPcs}
+          name="TrxInDQtyPcs"
+          value={trxData.TrxInDQtyPcs}
           onChange={handleChangeInput}
         />
 
@@ -71,7 +71,7 @@ function PengeluaranBarang() {
         <input
           type="text"
           name="notes"
-          value={trxData.notes}
+          value={trxData.TrxInNotes}
           onChange={handleChangeInput}
         />
         <div className="justify-center flex">

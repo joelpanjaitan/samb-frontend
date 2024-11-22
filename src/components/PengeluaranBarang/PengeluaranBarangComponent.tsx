@@ -1,28 +1,28 @@
-import { Warehouses, Customers, Products } from "../../dto/TampilanBarang.dto";
+import { Warehouses, Suppliers, Products } from "../../dto/TampilanBarang.dto";
 import { useState, useEffect } from "react";
 import connect from "../../connectionData";
 
 const PengeluaranBarangComponent = () => {
-  const [customers, setCustomers] = useState<Customers[]>([]);
+  const [suppliers, setCustomers] = useState<Suppliers[]>([]);
   const [products, setProducts] = useState<Products[]>([]);
   const [warehouse, setWarehouse] = useState<Warehouses[]>([]);
   const [trxData, setTrxData] = useState({
-    trxNo: "",
-    customerId: "",
-    productId: "",
-    qtyDus: 0,
-    qtyPcs: 0,
-    warehouseId: "",
-    trxDate: "",
-    notes: "",
+    TrxOutNo: "",
+    TrxOutSuppIdf: "",
+    TrxOutDProductId: "",
+    TrxInDQtyDus: 0,
+    TrxInDQtyPcs: 0,
+    WhsIdf: "",
+    TrxInDate: "",
+    TrxInNotes: "",
   });
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const customerData = await connect.get("/customers");
+        const customerData = await connect.get("/suppliers");
         setCustomers(customerData.data);
       } catch (error) {
-        console.error("Error to fetch customers:", error);
+        console.error("Error to fetch suppliers:", error);
       }
       try {
         const productData = await connect.get("/products");
@@ -67,7 +67,7 @@ const PengeluaranBarangComponent = () => {
     trxData,
     products,
     warehouse,
-    customers,
+    suppliers,
   };
 };
 
