@@ -47,9 +47,10 @@ const PengeluaranBarangComponent = () => {
   const handleSubmit = (input: any) => {
     input.preventDefault();
     connect
-      .post("/api/penerimaan", trxData)
+      .post("/trx-out", trxData)
       .then((response) => {
-        console.log("Barang diterima:", response.data);
+        console.log("Items released:", response.data);
+        window.alert("Items Outbound Success.");
       })
       .catch((error) => {
         console.error("Error penerimaan barang:", error);

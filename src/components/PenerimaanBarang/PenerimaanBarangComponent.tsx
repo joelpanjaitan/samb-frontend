@@ -55,8 +55,8 @@ const PenerimaanBarangComponent = () => {
     connect
       .post("/trx-in", trxData)
       .then((response) => {
-        console.log("Barang diterima:", response.data);
-        window.alert(`Items inbound success. ` + String(response.data.message));
+        console.log("Items accepted:", response.data);
+        window.alert(`Items Inbound Success. ` + String(response.data.message));
       })
       .catch((error) => {
         console.error("Error penerimaan barang:", error);
