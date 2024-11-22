@@ -3,6 +3,11 @@ function HomePage() {
   return (
     <div className="App">
       <header className="App-header">
+        <img
+          src={"/logo-samb.jpeg"}
+          className="App-logo p-10"
+          alt="logo_samb"
+        />
         <p className="text-3xl pb-3">Warehouse management system</p>
         <div className="flex gap-2">
           <Link to={"/penerimaan"}>
