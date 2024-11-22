@@ -10,11 +10,11 @@ const PengeluaranBarangComponent = () => {
     TrxOutNo: "",
     TrxOutSuppIdf: "",
     TrxOutDProductId: "",
-    TrxInDQtyDus: 0,
-    TrxInDQtyPcs: 0,
+    TrxOutDQtyDus: 0,
+    TrxOutDQtyPcs: 0,
     WhsIdf: "",
-    TrxInDate: "",
-    TrxInNotes: "",
+    TrxOutDate: "",
+    TrxOutNotes: "",
   });
   useEffect(() => {
     const fetchData = async () => {

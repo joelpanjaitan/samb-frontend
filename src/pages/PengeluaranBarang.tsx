@@ -54,8 +54,8 @@ function PengeluaranBarang() {
         <label>Jumlah Dus:</label>
         <input
           type="number"
-          name="TrxInDQtyDus"
-          value={trxData.TrxInDQtyDus}
+          name="TrxOutDQtyDus"
+          value={trxData.TrxOutDQtyDus}
           onChange={handleChangeInput}
         />
 
@@ -63,7 +63,7 @@ function PengeluaranBarang() {
         <input
           type="number"
           name="TrxInDQtyPcs"
-          value={trxData.TrxInDQtyPcs}
+          value={trxData.TrxOutDQtyPcs}
           onChange={handleChangeInput}
         />
 
@@ -71,7 +71,7 @@ function PengeluaranBarang() {
         <input
           type="text"
           name="TrxInNotes"
-          value={trxData.TrxInNotes}
+          value={trxData.TrxOutNotes}
           onChange={handleChangeInput}
         />
         <div className="justify-center flex">
