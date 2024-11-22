@@ -1,6 +1,6 @@
+import { Warehouses, Suppliers, Products } from "../../dto/TampilanBarang.dto";
 import { useState, useEffect } from "react";
 import connect from "../../connectionData";
-import { Warehouses, Suppliers, Products } from "../../dto/TampilanBarang.dto";
 
 const PenerimaanBarangComponent = () => {
   const [warehouse, setWarehouse] = useState<Warehouses[]>([]);
@@ -8,11 +8,11 @@ const PenerimaanBarangComponent = () => {
   const [products, setProducts] = useState<Products[]>([]);
   const [trxData, setTrxData] = useState({
     TrxInNo: "",
-    TrxInSuppIdf: 0,
+    TrxInSuppIdf: 1,
     TrxInDProductIdf: 0,
     TrxInDQtyDus: 0,
     TrxInDQtyPcs: 0,
-    WhsIdf: 0,
+    WhsIdf: 1,
     TrxInDate: "",
     TrxInNotes: "",
   });
@@ -56,7 +56,7 @@ const PenerimaanBarangComponent = () => {
       .post("/trx-in", trxData)
       .then((response) => {
         console.log("Barang diterima:", response.data);
-        window.alert("Barang diterima sukses");
+        window.alert(`Items inbound success. ` + String(response.data.message));
       })
       .catch((error) => {
         console.error("Error penerimaan barang:", error);
