@@ -19,19 +19,25 @@ const PenerimaanBarangComponent = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const supplierData = await axios.get("/api/suppliers");
+        const supplierData = await axios.get(
+          "https://samb-backend-production.up.railway.app/suppliers"
+        );
         setSuppliers(supplierData.data);
       } catch (error) {
         console.error("Error to fetch suppliers:", error);
       }
       try {
-        const productData = await axios.get("/api/products");
+        const productData = await axios.get(
+          "https://samb-backend-production.up.railway.app/products"
+        );
         setProducts(productData.data);
       } catch (error) {
         console.error("Error to fetch products:", error);
       }
       try {
-        const warehouseData = await axios.get("/api/warehouses");
+        const warehouseData = await axios.get(
+          "https://samb-backend-production.up.railway.app/warehouses"
+        );
         setWarehouse(warehouseData.data);
       } catch (error) {
         console.error("Error to fetch warehouses:", error);
