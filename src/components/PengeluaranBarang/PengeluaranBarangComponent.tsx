@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import connect from "../../connectionData";
 
 const PengeluaranBarangComponent = () => {
-  const [suppliers, setCustomers] = useState<Suppliers[]>([]);
+  const [suppliers, setSuppliers] = useState<Suppliers[]>([]);
   const [products, setProducts] = useState<Products[]>([]);
   const [warehouse, setWarehouse] = useState<Warehouses[]>([]);
   const [trxData, setTrxData] = useState({
@@ -20,7 +20,7 @@ const PengeluaranBarangComponent = () => {
     const fetchData = async () => {
       try {
         const customerData = await connect.get("/suppliers");
-        setCustomers(customerData.data);
+        setSuppliers(customerData.data);
       } catch (error) {
         console.error("Error to fetch suppliers:", error);
       }
@@ -66,7 +66,7 @@ const PengeluaranBarangComponent = () => {
   return {
     handleChangeInput,
     handleSubmit,
-    setCustomers,
+    setSuppliers,
     setWarehouse,
     setTrxData,
     setProducts,
