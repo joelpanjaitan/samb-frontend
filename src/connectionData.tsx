@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const connection = axios.create({
+const connect = axios.create({
   baseURL: "https://samb-backend-production.up.railway.app",
   timeout: 10000,
   headers: {
@@ -8,4 +8,4 @@ const connection = axios.create({
   },
 });
 
-export default connection;
+export default connect;

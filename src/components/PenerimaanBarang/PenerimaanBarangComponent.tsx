@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import connection from "../../connectionData";
+import connect from "../../connectionData";
 import { Warehouses, Suppliers, Products } from "../../dto/TampilanBarang.dto";
 
 const PenerimaanBarangComponent = () => {
@@ -19,19 +19,19 @@ const PenerimaanBarangComponent = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const supplierData = await connection.get("/suppliers");
+        const supplierData = await connect.get("/suppliers");
         setSuppliers(supplierData.data);
       } catch (error) {
         console.error("Error to fetch suppliers:", error);
       }
       try {
-        const productData = await connection.get("/products");
+        const productData = await connect.get("/products");
         setProducts(productData.data);
       } catch (error) {
         console.error("Error to fetch products:", error);
       }
       try {
-        const warehouseData = await connection.get("/warehouses");
+        const warehouseData = await connect.get("/warehouses");
         setWarehouse(warehouseData.data);
       } catch (error) {
         console.error("Error to fetch warehouses:", error);
@@ -46,7 +46,7 @@ const PenerimaanBarangComponent = () => {
 
   const handleSubmit = (input: any) => {
     input.preventDefault();
-    connection
+    connect
       .post("/api/penerimaan", trxData)
       .then((response) => {
         console.log("Barang diterima:", response.data);
