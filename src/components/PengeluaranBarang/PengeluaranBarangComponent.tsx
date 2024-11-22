@@ -18,9 +18,24 @@ const PengeluaranBarangComponent = () => {
   });
   useEffect(() => {
     const fetchData = async () => {
-      axios.get("/api/customers").then((res) => setCustomers(res.data));
-      axios.get("/api/products").then((res) => setProducts(res.data));
-      axios.get("/api/warehouses").then((res) => setWarehouse(res.data));
+      try {
+        const customerData = await axios.get("/api/customers");
+        setCustomers(customerData.data);
+      } catch (error) {
+        console.error("Error to fetch customers:", error);
+      }
+      try {
+        const productData = await axios.get("/api/products");
+        setProducts(productData.data);
+      } catch (error) {
+        console.error("Error to fetch products:", error);
+      }
+      try {
+        const warehouseData = await axios.get("/api/warehouses");
+        setWarehouse(warehouseData.data);
+      } catch (error) {
+        console.error("Error to fetch warehouses:", error);
+      }
     };
     fetchData();
   }, []);

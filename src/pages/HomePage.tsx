@@ -1,27 +1,25 @@
+import { Link } from "react-router-dom";
 function HomePage() {
   return (
     <div className="App">
       <header className="App-header">
         <p className="text-3xl pb-3">Warehouse management system</p>
         <div className="flex gap-2">
-          <button
-            className="text-base App-link bg-transparent border border-green-200 rounded-2xl px-4"
-            onClick={() => (window.location.href = "/penerimaan")}
-          >
-            Penerimaan barang
-          </button>
-          <button
-            className="text-base App-link bg-transparent border border-green-200 rounded-2xl px-4"
-            onClick={() => (window.location.href = "/pengeluaran")}
-          >
-            Pengeluaran barang
-          </button>
-          <button
-            className="text-base App-link bg-transparent border border-green-200 rounded-2xl px-4"
-            onClick={() => (window.location.href = "/report")}
-          >
-            Inventory Report
-          </button>
+          <Link to={"/penerimaan"}>
+            <button className="text-base App-link bg-transparent border border-green-200 rounded-2xl px-4">
+              Penerimaan barang
+            </button>
+          </Link>
+          <Link to={"/pengeluaran"}>
+            <button className="text-base App-link bg-transparent border border-green-200 rounded-2xl px-4">
+              Pengeluaran barang
+            </button>
+          </Link>
+          <Link to={"/report"}>
+            <button className="text-base App-link bg-transparent border border-green-200 rounded-2xl px-4">
+              Inventory Report
+            </button>
+          </Link>
         </div>
       </header>
     </div>
