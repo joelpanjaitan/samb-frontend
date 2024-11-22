@@ -62,7 +62,7 @@ function PengeluaranBarang() {
         <label>Jumlah Pcs:</label>
         <input
           type="number"
-          name="TrxInDQtyPcs"
+          name="TrxOutDQtyPcs"
           value={trxData.TrxOutDQtyPcs}
           onChange={handleChangeInput}
         />
@@ -70,7 +70,7 @@ function PengeluaranBarang() {
         <label>Catatan:</label>
         <input
           type="text"
-          name="TrxInNotes"
+          name="TrxOutNotes"
           value={trxData.TrxOutNotes}
           onChange={handleChangeInput}
         />

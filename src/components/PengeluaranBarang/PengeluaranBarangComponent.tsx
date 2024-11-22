@@ -8,11 +8,11 @@ const PengeluaranBarangComponent = () => {
   const [warehouse, setWarehouse] = useState<Warehouses[]>([]);
   const [trxData, setTrxData] = useState({
     TrxOutNo: "",
-    TrxOutSuppIdf: "",
-    TrxOutDProductId: "",
+    TrxOutSuppIdf: 1,
+    TrxOutDProductId: 1,
     TrxOutDQtyDus: 0,
     TrxOutDQtyPcs: 0,
-    WhsIdf: "",
+    WhsIdf: 1,
     TrxOutDate: "",
     TrxOutNotes: "",
   });
@@ -56,7 +56,9 @@ const PengeluaranBarangComponent = () => {
       .post("/trx-out", trxData)
       .then((response) => {
         console.log("Items released:", response.data);
-        window.alert("Items Outbound Success.");
+        window.alert(
+          "Items Outbound Success. " + String(response.data.message)
+        );
       })
       .catch((error) => {
         console.error("Error penerimaan barang:", error);
