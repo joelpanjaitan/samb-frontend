@@ -8,11 +8,11 @@ const PenerimaanBarangComponent = () => {
   const [products, setProducts] = useState<Products[]>([]);
   const [trxData, setTrxData] = useState({
     TrxInNo: "",
-    TrxInSuppIdf: "",
-    TrxInDProductIdf: "",
+    TrxInSuppIdf: 0,
+    TrxInDProductIdf: 0,
     TrxInDQtyDus: 0,
     TrxInDQtyPcs: 0,
-    WhsIdf: "",
+    WhsIdf: 0,
     TrxInDate: "",
     TrxInNotes: "",
   });
@@ -44,7 +44,7 @@ const PenerimaanBarangComponent = () => {
     const { name, value } = data.target;
     setTrxData((prevData) => ({
       ...prevData,
-      [name]: value,
+      [name]: value.replace(/^0+/, ""),
       TrxInDate: `${today}`,
       TrxInNo: `samb-${today}`,
     }));
