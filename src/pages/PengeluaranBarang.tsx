@@ -70,7 +70,7 @@ function PengeluaranBarang() {
         <label>Catatan:</label>
         <input
           type="text"
-          name="notes"
+          name="TrxInNotes"
           value={trxData.TrxInNotes}
           onChange={handleChangeInput}
         />

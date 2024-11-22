@@ -41,7 +41,13 @@ const PengeluaranBarangComponent = () => {
   }, []);
   const handleChangeInput = (data: any) => {
     const { name, value } = data.target;
-    setTrxData((prevData) => ({ ...prevData, [name]: value }));
+    var today = new Date().toISOString().split("T")[0];
+    setTrxData((prevData) => ({
+      ...prevData,
+      [name]: value.replace(/^0+/, ""),
+      TrxInDate: `${today}`,
+      TrxInNo: `samb-${today}`,
+    }));
   };
 
   const handleSubmit = (input: any) => {
